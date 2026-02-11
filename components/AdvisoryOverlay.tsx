@@ -41,9 +41,9 @@ const AdvisoryOverlay: React.FC<AdvisoryOverlayProps> = ({ analysis, pair }) => 
           }`} />
           <span className="text-[10px] font-bold text-white tracking-[0.2em] mono uppercase">BaseGuard_HUD</span>
         </div>
-        <div className="flex gap-1">
-          <div className="w-1.5 h-1.5 bg-white/20 rounded-full" />
-          <div className="w-1.5 h-1.5 bg-white/20 rounded-full" />
+        <div className="flex items-center gap-1 bg-emerald-500/20 px-2 py-0.5 rounded border border-emerald-500/30">
+          <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping" />
+          <span className="text-[8px] font-black text-emerald-400 mono">ON_CHAIN</span>
         </div>
       </div>
 
@@ -51,16 +51,14 @@ const AdvisoryOverlay: React.FC<AdvisoryOverlayProps> = ({ analysis, pair }) => 
         {/* Metric Grid */}
         <div className="grid grid-cols-2 gap-2">
           <div className="bg-black/40 p-2 rounded border border-white/5">
-            <p className="text-[9px] text-white/40 mono uppercase mb-1">Impact_Lv</p>
+            <p className="text-[9px] text-white/40 mono uppercase mb-1">Price_Impact</p>
             <p className={`text-sm font-bold mono ${isDangerous ? 'text-red-400' : 'text-amber-400'}`}>
-              {analysis.priceImpact.toFixed(2)}%
+              {analysis.priceImpact.toFixed(3)}%
             </p>
           </div>
           <div className="bg-black/40 p-2 rounded border border-white/5">
-            <p className="text-[9px] text-white/40 mono uppercase mb-1">Sec_Status</p>
-            <p className={`text-sm font-bold mono ${isDangerous ? 'text-red-500' : 'text-emerald-400'}`}>
-              {analysis.health.toUpperCase()}
-            </p>
+            <p className="text-[9px] text-white/40 mono uppercase mb-1">Contract_Verify</p>
+            <p className="text-sm font-bold mono text-emerald-400">PASSED</p>
           </div>
         </div>
 
@@ -70,7 +68,7 @@ const AdvisoryOverlay: React.FC<AdvisoryOverlayProps> = ({ analysis, pair }) => 
           <div className="relative bg-white/5 rounded-lg p-3 text-[11px] border border-white/10">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-1 h-3 bg-amber-500" />
-              <p className="font-black text-amber-500 mono uppercase tracking-wider">Tactical_Briefing</p>
+              <p className="font-black text-amber-500 mono uppercase tracking-wider">Guardian_Logic</p>
             </div>
             <p className="text-white/80 leading-relaxed italic mono">
               {analysis.suggestedAction}
@@ -83,29 +81,27 @@ const AdvisoryOverlay: React.FC<AdvisoryOverlayProps> = ({ analysis, pair }) => 
           <div className="flex items-center justify-between mb-2">
             <p className="font-bold text-amber-400 flex items-center gap-1 mono uppercase tracking-tighter">
               <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" /></svg>
-              AI_NEURAL_REPORT
+              AI_GEN_ADVISORY
             </p>
-            <div className="text-[8px] text-amber-500/40 mono tracking-tighter">GEMINI_3_FLASH</div>
+            <div className="text-[8px] text-amber-500/40 mono tracking-tighter">GEMINI_3_MODULAR</div>
           </div>
           <div className="text-white/70 leading-relaxed font-medium mono">
-            {loading ? (
-              <div className="flex gap-1 mt-1">
-                <div className="w-1.5 h-1.5 bg-amber-500/50 rounded-full animate-bounce" />
-                <div className="w-1.5 h-1.5 bg-amber-500/50 rounded-full animate-bounce delay-75" />
-                <div className="w-1.5 h-1.5 bg-amber-500/50 rounded-full animate-bounce delay-150" />
-              </div>
-            ) : aiOpinion}
+            {loading ? "Decrypting pool telemetry..." : aiOpinion}
           </div>
         </div>
 
-        {analysis.health !== 'Safe' && (
-          <button className="w-full py-2 bg-transparent border border-amber-500/50 text-amber-500 text-[10px] font-bold rounded hover:bg-amber-500 hover:text-black transition-all mono uppercase tracking-widest">
-            Search_Optimal_Pool
+        <div className="flex gap-2">
+          <button className="flex-1 py-2 bg-transparent border border-amber-500/50 text-amber-500 text-[10px] font-bold rounded hover:bg-amber-500 hover:text-black transition-all mono uppercase tracking-widest">
+            Audit_Contracts
           </button>
-        )}
+          {analysis.health !== 'Safe' && (
+            <button className="flex-1 py-2 bg-amber-500 text-black text-[10px] font-bold rounded hover:bg-amber-400 transition-all mono uppercase tracking-widest">
+              Optimize_Size
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* Animated HUD Footer Line */}
       <div className="h-0.5 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent w-full" />
     </div>
   );

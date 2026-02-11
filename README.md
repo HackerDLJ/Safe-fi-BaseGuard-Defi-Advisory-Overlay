@@ -1,24 +1,21 @@
 
-# BaseGuard: Real-Time DeFi Trade Advisory Overlay
+# BaseGuard: On-Chain Trade Advisory & Protection
 
-## The Problem
-Retail crypto traders, especially in rapidly growing markets like India, often lose significant capital on Base chain due to **hidden slippage**, **low liquidity pools**, and **sandwich attacks**. They trade on popular DEXs like Uniswap without realizing their large orders are moving the price against them by 5-10% before the trade even lands.
+## The High-Trust Advisor for Base
+BaseGuard combines high-frequency blockchain telemetry with Google Gemini AI to protect retail traders on Base. Unlike simple calculators, BaseGuard uses a **Solidity Smart Contract (TradeGuardian.sol)** to provide verified, on-chain execution analysis.
 
-## The Solution
-**BaseGuard** is a browser extension overlay that injects a smart advisor into the existing DEX workflow. 
-- **No Migration Required**: Users keep trading on Uniswap/PancakeSwap.
-- **Deep Analysis**: Uses constant-product formulas to compute real-time price impact.
-- **AI Powered**: Integrates Gemini 3.0 to explain risks in plain language.
-- **Smart Sizing**: Automatically suggests splitting orders to preserve capital.
+## Core Innovations
+1. **Solidity Trade Verification**: The logic is implemented in `TradeGuardian.sol`, allowing the advisory tool to query a verified on-chain oracle for slippage analysis rather than relying on potentially malicious client-side data.
+2. **Tactical Sci-Fi HUD**: A cyberpunk-inspired interface that overlays seamlessly on Uniswap, providing a high-contrast tactical readout of trade health.
+3. **Deterministic Mock Simulation**: Enhanced environment in `baseService.ts` that replicates realistic pool fluctuations, fee tiers (0.01% - 1%), and liquidity depths for all major Base assets.
+4. **AI Risk Profiling**: Gemini 3.0 analyzes the specific token pair and price impact to warn about "Low Liquidity Traps" or "Sandwich Attack Windows".
 
-## Hackathon MVP Features
-1. **Overlay UI**: A non-intrusive floating panel that activates during swaps.
-2. **Liquidity Health Check**: Reads Base RPC data to determine pool depth.
-3. **Execution Advisor**: Visual badges (Safe/Warning/Risky) based on impact.
-4. **Gemini Insights**: Real-time risk assessment and defensive trading tips.
+## Smart Contract Details (`contracts/TradeGuardian.sol`)
+- **analyzeTrade**: Computes exact output and price impact using internal pool reserves logic.
+- **Retail Guard**: A safety threshold (default 3%) that marks trades as unsafe for retail execution.
+- **Gas Optimized**: Uses assembly-level precision for constant product calculations.
 
-## Tech Stack
-- **Frontend**: React + Tailwind CSS
-- **Blockchain**: Base (Mainnet/Sepolia)
-- **AI**: Google Gemini API (gemini-3-flash-preview)
-- **Math**: Uniswap V2 constant product (x*y=k) logic
+## Getting Started
+- Open `index.html` to view the **Tactical Simulation**.
+- Switch token pairs (e.g., PEPE/USDC) to see the `Risky` alert triggered by low-liquidity simulation.
+- Increase input amount (e.g., 50 ETH) to see the Price Impact HUD respond in real-time.
