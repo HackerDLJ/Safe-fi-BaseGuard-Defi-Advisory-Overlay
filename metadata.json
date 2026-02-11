@@ -1,0 +1,7 @@
+{
+  "name": "BaseGuard: DeFi Advisory Overlay",
+  "description": "A real-time trade advisory overlay for Base blockchain DEXs that helps retail traders avoid high slippage and inefficient execution through AI-powered insights and constant-product analysis.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
