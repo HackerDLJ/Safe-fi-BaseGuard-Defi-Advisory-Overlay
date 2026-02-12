@@ -1,9 +1,9 @@
 /**
- * BaseGuard Content Script
+ * Safe-Fi Content Script
  * Monitors Uniswap/DEX UI to capture trade details.
  */
 
-console.log("BaseGuard Tactical Overlay Active");
+console.log("Safe-Fi Tactical Overlay Active");
 
 function detectSwapDetails() {
   // Selectors for Uniswap V3/V2 UI elements (Simplified for MVP)

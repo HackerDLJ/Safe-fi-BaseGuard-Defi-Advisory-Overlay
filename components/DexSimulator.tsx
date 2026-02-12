@@ -64,7 +64,7 @@ const DexSimulator: React.FC = () => {
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shadow-[0_0_10px_#fbbf24]" />
-                <h1 className="text-sm font-black text-amber-400 tracking-[0.4em] uppercase mono gold-text-glow">Base_Guardian</h1>
+                <h1 className="text-sm font-black text-amber-400 tracking-[0.4em] uppercase mono gold-text-glow">Safe-Fi_Guardian</h1>
               </div>
               <p className="text-[10px] text-amber-500/60 mono uppercase tracking-widest">Verified_By_TradeGuardian.sol</p>
             </div>
@@ -149,7 +149,7 @@ const DexSimulator: React.FC = () => {
           <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-amber-500/40" />
         </div>
         <p className="text-amber-500 text-[10px] font-black mono uppercase tracking-[0.5em] gold-text-glow">
-          Blockchain_Guardian_OS // L2_ACTIVE
+          Safe-Fi_Guardian_OS // L2_ACTIVE
         </p>
       </div>
 

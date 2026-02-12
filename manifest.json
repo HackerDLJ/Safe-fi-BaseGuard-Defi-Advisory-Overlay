@@ -1,7 +1,6 @@
-
 {
   "manifest_version": 3,
-  "name": "BaseGuard: DeFi Advisor",
+  "name": "Safe-Fi: DeFi Advisor",
   "version": "1.0.0",
   "description": "Smart trade advisor for Base DEXs. Avoid slippage with AI-powered execution analysis.",
   "permissions": [

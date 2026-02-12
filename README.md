@@ -1,8 +1,7 @@
-
-# BaseGuard: On-Chain Trade Advisory & Protection
+# Safe-Fi: On-Chain Trade Advisory & Protection
 
 ## The High-Trust Advisor for Base
-BaseGuard combines high-frequency blockchain telemetry with Google Gemini AI to protect retail traders on Base. Unlike simple calculators, BaseGuard uses a **Solidity Smart Contract (TradeGuardian.sol)** to provide verified, on-chain execution analysis.
+Safe-Fi combines high-frequency blockchain telemetry with Google Gemini AI to protect retail traders on Base. Unlike simple calculators, Safe-Fi uses a **Solidity Smart Contract (TradeGuardian.sol)** to provide verified, on-chain execution analysis.
 
 ## Core Innovations
 1. **Solidity Trade Verification**: The logic is implemented in `TradeGuardian.sol`, allowing the advisory tool to query a verified on-chain oracle for slippage analysis rather than relying on potentially malicious client-side data.

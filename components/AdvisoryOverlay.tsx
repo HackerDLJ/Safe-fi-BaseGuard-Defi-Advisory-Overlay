@@ -50,7 +50,7 @@ const AdvisoryOverlay: React.FC<AdvisoryOverlayProps> = ({ analysis, pair }) => 
             isWarning ? 'bg-amber-500 shadow-[0_0_8px_#f59e0b]' : 
             'bg-emerald-500 shadow-[0_0_8px_#10b981]'
           }`} />
-          <span className="text-[10px] font-black text-white tracking-[0.25em] mono uppercase gold-text-glow">Guardian_HUD</span>
+          <span className="text-[10px] font-black text-white tracking-[0.25em] mono uppercase gold-text-glow">Safe-Fi_HUD</span>
         </div>
         <div className="flex items-center gap-1.5 bg-black/40 px-2 py-0.5 rounded border border-amber-500/30">
           <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping" />
